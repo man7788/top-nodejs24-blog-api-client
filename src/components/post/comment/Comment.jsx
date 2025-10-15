@@ -1,11 +1,11 @@
 import styles from './Comment.module.css';
-import CommentForm from './form/CommentForm';
 
-const Comment = ({ id }) => {
+const Comment = ({ name, content, created }) => {
   return (
     <div className={styles.Comment}>
-      <h2>Comment ID: {id}</h2>
-      <CommentForm />
+      <h4>{name}</h4>
+      <span>{content}</span>
+      {created}
     </div>
   );
 };
