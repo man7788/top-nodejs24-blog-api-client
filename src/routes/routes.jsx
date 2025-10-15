@@ -1,6 +1,7 @@
 import App from '../App';
 import ErrorPage from '../components/error/ErrorPage';
 import Home from '../components/home/Home';
+import Post from '../components/posts/Post';
 
 const routes = [
   {
@@ -11,6 +12,10 @@ const routes = [
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: '/posts/:id',
+        element: <Post />,
       },
     ],
   },
