@@ -1,9 +1,13 @@
 import styles from './PostPreview.module.css';
+import { Link } from 'react-router';
 
-const Post = () => {
+const Post = ({ id, title, created }) => {
   return (
     <div className={styles.PostPreview}>
-      <h2>Post Title</h2>
+      <Link to={`/posts/${id}`}>
+        <h2>{title}</h2>
+      </Link>
+      {created}
     </div>
   );
 };
