@@ -1,12 +1,12 @@
 import styles from './App.module.css';
 import Header from './components/header/Header';
-import Body from './components/body/Body';
+import { Outlet } from 'react-router';
 
 function App() {
   return (
     <div className={styles.App}>
       <Header />
-      <Body />
+      <Outlet />
     </div>
   );
 }
