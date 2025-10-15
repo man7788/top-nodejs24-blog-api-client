@@ -1,8 +1,8 @@
-import styles from './Post.module.css';
+import styles from './PostPreview.module.css';
 
 const Post = () => {
   return (
-    <div className={styles.Post}>
+    <div className={styles.PostPreview}>
       <h2>Post Title</h2>
     </div>
   );

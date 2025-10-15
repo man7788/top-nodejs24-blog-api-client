@@ -1,7 +1,7 @@
 import App from '../App';
 import ErrorPage from '../components/error/ErrorPage';
 import Home from '../components/home/Home';
-import Post from '../components/posts/Post';
+import Post from '../components/post/Post';
 
 const routes = [
   {

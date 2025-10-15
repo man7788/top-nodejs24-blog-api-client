@@ -1,10 +1,10 @@
 import styles from './Home.module.css';
-import PostList from './posts/PostList';
+import HomeList from './list/HomeList';
 
 const Home = () => {
   return (
     <div className={styles.Home}>
-      <PostList />
+      <HomeList />
     </div>
   );
 };
