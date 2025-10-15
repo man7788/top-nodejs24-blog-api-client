@@ -1,9 +1,10 @@
-import './App.module.css';
+import styles from './App.module.css';
+import Header from './components/header/Header';
 
 function App() {
   return (
-    <div class>
-      <h1>Blog API</h1>
+    <div className={styles.App}>
+      <Header />
     </div>
   );
 }
