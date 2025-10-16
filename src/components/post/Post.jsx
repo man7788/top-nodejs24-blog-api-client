@@ -1,33 +1,20 @@
 import styles from './Post.module.css';
-import { useParams } from 'react-router';
+import usePostDetail from '../../hooks/usePostDetail';
 import Comment from './comment/Comment';
 import CommentForm from './form/CommentForm';
 
 const Post = () => {
-  const { id } = useParams();
+  const { post, loading, error } = usePostDetail();
 
-  const post = {
-    id: 1,
-    title: 'Title for the first post',
-    content: 'Content for the first post.',
-    createdAt: '2025-10-15T19:20:06.240Z',
-    updatedAt: '2025-10-15T19:20:06.240Z',
-    comments: [
-      {
-        id: 1,
-        name: 'John Doe',
-        content: 'First commennt for the first post.',
-        createdAt: '2025-10-15T19:20:06.295Z',
-      },
-      {
-        id: 2,
-        name: 'John Doe',
-        email: 'john@doe.com',
-        content: 'Second commennt for the first post.',
-        createdAt: '2025-10-15T19:20:06.295Z',
-      },
-    ],
-  };
+  if (loading) return <p>Loading...</p>;
+
+  if (error) {
+    if (error.message === 'Post Not Found') {
+      return <p>{error.message}</p>;
+    }
+
+    return <p>A network error was encountered</p>;
+  }
 
   return (
     <div className={styles.Post}>
