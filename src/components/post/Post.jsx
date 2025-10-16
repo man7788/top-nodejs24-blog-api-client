@@ -4,7 +4,7 @@ import Comment from './comment/Comment';
 import CommentForm from './form/CommentForm';
 
 const Post = () => {
-  const { post, loading, error } = usePostDetail();
+  const { post, loading, error, update, setUpdate } = usePostDetail();
 
   if (loading) return <p>Loading...</p>;
 
@@ -29,7 +29,7 @@ const Post = () => {
           created={comment.createdAt}
         />
       ))}
-      <CommentForm />
+      <CommentForm id={post.id} update={update} setUpdate={setUpdate} />
     </div>
   );
 };
