@@ -8,6 +8,8 @@ const usePostDetail = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const [update, setUpdate] = useState(false);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -38,9 +40,9 @@ const usePostDetail = () => {
     };
 
     fetchData();
-  }, [id]);
+  }, [id, update]);
 
-  return { post, error, loading };
+  return { post, error, loading, update, setUpdate };
 };
 
 export default usePostDetail;
