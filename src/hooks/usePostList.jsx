@@ -11,6 +11,11 @@ const usePostList = () => {
         const response = await fetch(`${import.meta.env.VITE_API_URL}/posts`, {
           mode: 'cors',
         });
+
+        if (response.status >= 400) {
+          throw new Error('Server Error');
+        }
+
         const result = await response.json();
         const data = result.data.posts;
 
