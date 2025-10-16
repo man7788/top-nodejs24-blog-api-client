@@ -1,15 +1,39 @@
 import styles from './CommentForm.module.css';
 import { useState } from 'react';
+import createComment from '../../../api/postComment';
 
-const CommentForm = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [content, setContent] = useState('');
+const CommentForm = ({ id, update, setUpdate }) => {
+  const [loading, setLoading] = useState(null);
+  const [error, setError] = useState(null);
+  const [formError, setFormError] = useState(null);
 
-  const submitForm = (e) => {
+  const [name, setName] = useState('front end');
+  const [email, setEmail] = useState('front@end.com');
+  const [content, setContent] = useState('front end comment');
+
+  const submitForm = async (e) => {
     e.preventDefault();
-    console.log(e.target);
+    setLoading(true);
+
+    const { error } = await createComment(id, name, email, content);
+
+    if (error) {
+      if (error.details) {
+        setFormError(error.details);
+      } else {
+        setError(true);
+      }
+    }
+
+    setLoading(false);
+    setUpdate(!update);
   };
+
+  if (loading) return <p>Loading...</p>;
+
+  if (error) {
+    return <p>A network error was encountered</p>;
+  }
 
   return (
     <div className={styles.CommentForm}>
@@ -44,6 +68,10 @@ const CommentForm = () => {
         <br></br>
         <input type="submit" value="Submit" />
       </form>
+      <ul>
+        {formError &&
+          formError.map((item) => <li key={item.field}>{item.message}</li>)}
+      </ul>
     </div>
   );
 };
