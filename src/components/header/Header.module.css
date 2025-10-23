@@ -1,3 +1,18 @@
-.ErrorPage {
-  display: flex;
+.Header {
+  border-bottom: 2px solid darkgray;
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 1280px) 1fr;
+  grid-column: 1/4;
+  padding: 0 1rem;
+}
+
+.nav {
+  grid-column: 2/3;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
 }
