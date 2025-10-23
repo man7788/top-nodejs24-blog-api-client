@@ -19,3 +19,8 @@
   margin: 0;
   margin-bottom: 1rem;
 }
+
+.error,
+.loading {
+  grid-column: 2/3;
+}
