@@ -1,4 +1,21 @@
 .Post {
+  max-width: 1280px;
   display: flex;
   flex-direction: column;
+  grid-column: 2/3;
+  padding: 1rem;
+}
+
+.createdAt {
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+
+.content {
+  font-size: 1.2rem;
+}
+
+.comments {
+  margin: 0;
+  margin-bottom: 1rem;
 }
