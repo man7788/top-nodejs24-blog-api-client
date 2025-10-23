@@ -1,4 +1,10 @@
 .PostPreview {
   display: flex;
   flex-direction: column;
+  padding: 1rem;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
 }
