@@ -41,10 +41,21 @@ const CommentForm = ({ id, update, setUpdate }) => {
     setUpdate(!update);
   };
 
-  if (loading) return <p>Loading...</p>;
+  if (loading)
+    return (
+      <div>
+        <h4 className={styles.title}>Leave a comment</h4>
+        <h4>Loading...</h4>
+      </div>
+    );
 
   if (error) {
-    return <p>A network error was encountered</p>;
+    return (
+      <div>
+        <h4 className={styles.title}>Leave a comment</h4>
+        <h4>A network error was encountered</h4>
+      </div>
+    );
   }
 
   return (
