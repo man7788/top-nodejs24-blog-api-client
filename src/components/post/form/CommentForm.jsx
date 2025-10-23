@@ -32,8 +32,10 @@ const CommentForm = ({ id, update, setUpdate }) => {
         });
 
         setFormError(formError);
+        return setLoading(false);
       } else {
         setError(true);
+        return setLoading(false);
       }
     }
 
