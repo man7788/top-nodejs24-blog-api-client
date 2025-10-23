@@ -7,9 +7,9 @@ const CommentForm = ({ id, update, setUpdate }) => {
   const [error, setError] = useState(null);
   const [formError, setFormError] = useState(null);
 
-  const [name, setName] = useState('front end');
-  const [email, setEmail] = useState('front@end.com');
-  const [content, setContent] = useState('front end comment');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [content, setContent] = useState('');
 
   const submitForm = async (e) => {
     e.preventDefault();
@@ -19,7 +19,19 @@ const CommentForm = ({ id, update, setUpdate }) => {
 
     if (error) {
       if (error.details) {
-        setFormError(error.details);
+        const formError = {};
+
+        error.details.map((error) => {
+          if (error.field === 'email') {
+            formError.email = error.message;
+          } else if (error.field === 'name') {
+            formError.name = error.message;
+          } else if (error.field === 'content') {
+            formError.content = error.message;
+          }
+        });
+
+        setFormError(formError);
       } else {
         setError(true);
       }
@@ -37,41 +49,50 @@ const CommentForm = ({ id, update, setUpdate }) => {
 
   return (
     <div className={styles.CommentForm}>
-      <h4>Leave a comment</h4>
-      <form method="post" onSubmit={submitForm}>
-        <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={name}
-          onChange={(event) => setName(event.target.value)}
-        />
-        <br></br>
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-        />
-        <br></br>
-        <textarea
-          name="content"
-          rows="5"
-          cols="30"
-          placeholder="Your comment here"
-          value={content}
-          onChange={(event) => setContent(event.target.value)}
-        ></textarea>
-        <br></br>
-        <input type="submit" value="Submit" />
+      <h4 className={styles.title}>Leave a comment</h4>
+      <form method="post" onSubmit={submitForm} className={styles.form}>
+        <div className={styles.inputGroup}>
+          <label htmlFor="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+            className={styles.input}
+          />
+          <div className={styles.errMessage}>
+            {formError?.name && formError?.name}
+          </div>
+        </div>
+        <div className={styles.inputGroup}>
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            className={styles.input}
+          />
+          <div className={styles.errMessage}>
+            {formError?.email && <div>{formError?.email}</div>}
+          </div>
+        </div>
+        <div className={styles.textareaGroup}>
+          <textarea
+            name="content"
+            placeholder="Your comment here"
+            value={content}
+            onChange={(event) => setContent(event.target.value)}
+            className={styles.textarea}
+          ></textarea>
+          <div className={styles.errMessage}>
+            {formError?.content && formError?.content}
+          </div>
+        </div>
+        <input type="submit" value="Submit" className={styles.submit} />
       </form>
-      <ul>
-        {formError &&
-          formError.map((item) => <li key={item.field}>{item.message}</li>)}
-      </ul>
     </div>
   );
 };
