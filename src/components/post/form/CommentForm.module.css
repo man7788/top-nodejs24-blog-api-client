@@ -2,3 +2,43 @@
   display: flex;
   flex-direction: column;
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  width: 200px;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.errMessage {
+  height: 1.5rem;
+  font-size: 1rem;
+}
+
+.textareaGroup {
+  display: flex;
+  flex-direction: column;
+  height: 180px;
+}
+
+.textarea {
+  width: 500px;
+  height: 150px;
+  font-size: 1rem;
+  resize: none;
+}
+
+.submit {
+  width: 80px;
+  height: 30px;
+}
