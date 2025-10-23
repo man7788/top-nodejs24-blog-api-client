@@ -1,4 +1,19 @@
 .Comment {
   display: flex;
   flex-direction: column;
+  margin: 0 1rem;
+}
+
+.author {
+  font-size: 1rem;
+  font-weight: normal;
+  margin: 0;
+}
+
+.content {
+  font-size: 0.9rem;
+}
+
+.createdAt {
+  font-size: 0.8rem;
 }
