@@ -8,14 +8,14 @@ const Post = () => {
   const { post, loading, error, update, setUpdate } = usePostDetail();
   const formattedDate = dateFormatter(post?.createdAt);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <h2 className={styles.loading}>Loading...</h2>;
 
   if (error) {
-    if (error.message === 'Post Not Found') {
-      return <p>{error.message}</p>;
+    if (error?.message === 'Post Not Found') {
+      return <h2 className={styles.error}>{error.message}</h2>;
     }
 
-    return <p>A network error was encountered</p>;
+    return <h2 className={styles.error}>A network error was encountered</h2>;
   }
 
   return (
