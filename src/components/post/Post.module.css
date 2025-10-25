@@ -1,5 +1,5 @@
 .Post {
-  max-width: 1280px;
+  max-width: 720px;
   display: flex;
   flex-direction: column;
   grid-column: 2/3;
