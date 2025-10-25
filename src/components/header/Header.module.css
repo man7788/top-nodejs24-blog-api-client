@@ -1,18 +1,39 @@
 .Header {
-  border-bottom: 2px solid darkgray;
+  border-bottom: 1px solid darkgray;
+  height: 50px;
   display: grid;
   grid-template-columns: 1fr minmax(auto, 1280px) 1fr;
+  align-content: center;
   grid-column: 1/4;
-  padding: 0 1rem;
 }
 
 .nav {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
   grid-column: 2/3;
   font-size: 2rem;
+}
+
+.logo {
+  text-decoration: none;
+  color: inherit;
   font-weight: bold;
+  grid-column: 1/2;
+  padding-left: 1rem;
+}
+
+.linkDiv {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 40px;
+  grid-column: 2/3;
+  padding-right: 1rem;
 }
 
 .link {
   text-decoration: none;
   color: inherit;
+  font-weight: normal;
+  font-size: 1.2rem;
 }
