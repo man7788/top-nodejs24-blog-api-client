@@ -1,5 +1,5 @@
 .Footer {
-  border-top: 2px solid darkgray;
+  border-top: 1px solid darkgray;
   height: fit-content;
   display: grid;
   grid-template-columns: 1fr minmax(auto, 1280px) 1fr;
