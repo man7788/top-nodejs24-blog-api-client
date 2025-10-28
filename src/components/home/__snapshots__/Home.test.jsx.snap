@@ -1,0 +1,54 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Home component > should render a list of posts 1`] = `
+<div>
+  <main
+    class="_Home_5cbdfa"
+  >
+    <ul
+      class="_HomeList_e3c83a"
+    >
+      <li
+        class="_PostPreview_eab267"
+      >
+        <a
+          class="_link_eab267"
+          data-discover="true"
+          href="/posts/1"
+        >
+          <h2
+            class="_title_eab267"
+          >
+            Post title 1
+          </h2>
+        </a>
+        <div
+          class="_date_eab267"
+        >
+          29 Oct 2025
+        </div>
+      </li>
+      <li
+        class="_PostPreview_eab267"
+      >
+        <a
+          class="_link_eab267"
+          data-discover="true"
+          href="/posts/2"
+        >
+          <h2
+            class="_title_eab267"
+          >
+            Post title 2
+          </h2>
+        </a>
+        <div
+          class="_date_eab267"
+        >
+          29 Oct 2025
+        </div>
+      </li>
+    </ul>
+  </main>
+</div>
+`;
