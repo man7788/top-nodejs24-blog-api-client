@@ -3,24 +3,24 @@ import { Link } from 'react-router';
 
 const Header = () => {
   return (
-    <div className={styles.Header}>
-      <h1 className={styles.nav}>
+    <header className={styles.Header}>
+      <div className={styles.headerChild}>
         <Link className={styles.logo} to="/">
           Blog
         </Link>
-        <div className={styles.linkDiv}>
+        <nav className={styles.nav}>
           <Link className={styles.link} to="/">
             Posts
           </Link>
-          <Link className={styles.link} to="/">
+          <Link className={styles.link} to="/about">
             About
           </Link>
-          <Link className={styles.link} to="/">
+          <Link className={styles.link} to="/contact">
             Contact
           </Link>
-        </div>
-      </h1>
-    </div>
+        </nav>
+      </div>
+    </header>
   );
 };
 
