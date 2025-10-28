@@ -3,9 +3,9 @@ import HomeList from './list/HomeList';
 
 const Home = () => {
   return (
-    <div className={styles.Home}>
+    <main className={styles.Home}>
       <HomeList />
-    </div>
+    </main>
   );
 };
 
