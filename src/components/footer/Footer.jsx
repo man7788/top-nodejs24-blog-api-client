@@ -3,20 +3,20 @@ import { Link } from 'react-router';
 
 const Footer = () => {
   return (
-    <div className={styles.Footer}>
-      <div className={styles.nav}>
+    <footer className={styles.Footer}>
+      <nav className={styles.nav}>
         <Link className={styles.link} to="/">
           Blog
         </Link>
-        <Link className={styles.link} to="/">
+        <Link className={styles.link} to="/about">
           About
         </Link>
-        <Link className={styles.link} to="/">
+        <Link className={styles.link} to="/contact">
           Contact
         </Link>
-      </div>
+      </nav>
       <div className={styles.copyright}>© 2025 All rights reserved </div>
-    </div>
+    </footer>
   );
 };
 
