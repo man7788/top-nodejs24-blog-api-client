@@ -11,7 +11,7 @@ const HomeList = () => {
     return <h2 className={styles.error}>A network error was encountered</h2>;
 
   return (
-    <div className={styles.HomeList}>
+    <ul className={styles.HomeList}>
       {posts.map((post) => (
         <PostPreview
           key={post.id}
@@ -20,7 +20,7 @@ const HomeList = () => {
           created={post.createdAt}
         />
       ))}
-    </div>
+    </ul>
   );
 };
 
