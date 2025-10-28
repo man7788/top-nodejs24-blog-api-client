@@ -7,22 +7,21 @@
   grid-column: 1/4;
 }
 
-.nav {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-column: 2/3;
-  font-size: 2rem;
-}
-
 .logo {
   text-decoration: none;
   color: inherit;
   font-weight: bold;
-  grid-column: 1/2;
+  font-size: 2rem;
   padding-left: 1rem;
 }
 
-.linkDiv {
+.headerChild {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-column: 2/3;
+}
+
+.nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
