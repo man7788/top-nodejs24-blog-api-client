@@ -19,23 +19,27 @@ const Post = () => {
   }
 
   return (
-    <div className={styles.Post}>
-      <h2 className={styles.title}>
-        {post.title}
-        <div className={styles.createdAt}>{formattedDate}</div>
-      </h2>
-      <p className={styles.content}>{post.content}</p>
-      <h4 className={styles.comments}>Comments</h4>
-      {post.comments.map((comment) => (
-        <Comment
-          key={comment.id}
-          name={comment.name}
-          content={comment.content}
-          created={comment.createdAt}
-        />
-      ))}
-      <CommentForm id={post.id} update={update} setUpdate={setUpdate} />
-    </div>
+    <main className={styles.Post}>
+      <article>
+        <h2 className={styles.title}>
+          {post.title}
+          <div className={styles.createdAt}>{formattedDate}</div>
+        </h2>
+        <p className={styles.content}>{post.content}</p>
+      </article>
+      <section>
+        <h4 className={styles.comments}>Comments</h4>
+        {post.comments.map((comment) => (
+          <Comment
+            key={comment.id}
+            name={comment.name}
+            content={comment.content}
+            created={comment.createdAt}
+          />
+        ))}
+        <CommentForm id={post.id} update={update} setUpdate={setUpdate} />
+      </section>
+    </main>
   );
 };
 
