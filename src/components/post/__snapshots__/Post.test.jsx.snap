@@ -1,0 +1,281 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Post component > should render post detail 1`] = `
+<div>
+  <main
+    class="_Post_67f347"
+  >
+    <article>
+      <h2
+        class="_title_67f347"
+      >
+        Post title 1
+        <div
+          class="_createdAt_67f347"
+        >
+          29 Oct 2025
+        </div>
+      </h2>
+      <p
+        class="_content_67f347"
+      />
+    </article>
+    <section>
+      <h4
+        class="_comments_67f347"
+      >
+        Comments
+      </h4>
+      <article
+        class="_Comment_66cb20"
+      >
+        <h5
+          class="_author_66cb20"
+        >
+          john doe
+           • 
+          <span
+            class="_createdAt_66cb20"
+          >
+            NaN undefined NaN
+          </span>
+        </h5>
+        <p
+          class="_content_66cb20"
+        >
+          Comment 1
+        </p>
+      </article>
+      <article
+        class="_Comment_66cb20"
+      >
+        <h5
+          class="_author_66cb20"
+        >
+          jane doe
+           • 
+          <span
+            class="_createdAt_66cb20"
+          >
+            NaN undefined NaN
+          </span>
+        </h5>
+        <p
+          class="_content_66cb20"
+        >
+          Comment 2
+        </p>
+      </article>
+      <div
+        class="_CommentForm_793cc7"
+      >
+        <h4
+          class="_title_793cc7"
+        >
+          Leave a comment
+        </h4>
+        <form
+          class="_form_793cc7"
+          method="post"
+        >
+          <div
+            class="_inputGroup_793cc7"
+          >
+            <label
+              for="name"
+            >
+              Name:
+            </label>
+            <input
+              class="_input_793cc7"
+              id="name"
+              name="name"
+              type="text"
+              value=""
+            />
+            <div
+              class="_errMessage_793cc7"
+            />
+          </div>
+          <div
+            class="_inputGroup_793cc7"
+          >
+            <label
+              for="email"
+            >
+              Email:
+            </label>
+            <input
+              class="_input_793cc7"
+              id="email"
+              name="email"
+              type="email"
+              value=""
+            />
+            <div
+              class="_errMessage_793cc7"
+            />
+          </div>
+          <div
+            class="_textareaGroup_793cc7"
+          >
+            <textarea
+              class="_textarea_793cc7"
+              name="content"
+              placeholder="Your comment here"
+            />
+            <div
+              class="_errMessage_793cc7"
+            />
+          </div>
+          <input
+            class="_submit_793cc7"
+            type="submit"
+            value="Submit"
+          />
+        </form>
+      </div>
+    </section>
+  </main>
+</div>
+`;
+
+exports[`Post component > should render post page 1`] = `
+<div>
+  <main
+    class="_Post_67f347"
+  >
+    <article>
+      <h2
+        class="_title_67f347"
+      >
+        Post title 1
+        <div
+          class="_createdAt_67f347"
+        >
+          29 Oct 2025
+        </div>
+      </h2>
+      <p
+        class="_content_67f347"
+      />
+    </article>
+    <section>
+      <h4
+        class="_comments_67f347"
+      >
+        Comments
+      </h4>
+      <article
+        class="_Comment_66cb20"
+      >
+        <h5
+          class="_author_66cb20"
+        >
+          john doe
+           • 
+          <span
+            class="_createdAt_66cb20"
+          >
+            NaN undefined NaN
+          </span>
+        </h5>
+        <p
+          class="_content_66cb20"
+        >
+          Comment 1
+        </p>
+      </article>
+      <article
+        class="_Comment_66cb20"
+      >
+        <h5
+          class="_author_66cb20"
+        >
+          jane doe
+           • 
+          <span
+            class="_createdAt_66cb20"
+          >
+            NaN undefined NaN
+          </span>
+        </h5>
+        <p
+          class="_content_66cb20"
+        >
+          Comment 2
+        </p>
+      </article>
+      <div
+        class="_CommentForm_793cc7"
+      >
+        <h4
+          class="_title_793cc7"
+        >
+          Leave a comment
+        </h4>
+        <form
+          class="_form_793cc7"
+          method="post"
+        >
+          <div
+            class="_inputGroup_793cc7"
+          >
+            <label
+              for="name"
+            >
+              Name:
+            </label>
+            <input
+              class="_input_793cc7"
+              id="name"
+              name="name"
+              type="text"
+              value=""
+            />
+            <div
+              class="_errMessage_793cc7"
+            />
+          </div>
+          <div
+            class="_inputGroup_793cc7"
+          >
+            <label
+              for="email"
+            >
+              Email:
+            </label>
+            <input
+              class="_input_793cc7"
+              id="email"
+              name="email"
+              type="email"
+              value=""
+            />
+            <div
+              class="_errMessage_793cc7"
+            />
+          </div>
+          <div
+            class="_textareaGroup_793cc7"
+          >
+            <textarea
+              class="_textarea_793cc7"
+              name="content"
+              placeholder="Your comment here"
+            />
+            <div
+              class="_errMessage_793cc7"
+            />
+          </div>
+          <input
+            class="_submit_793cc7"
+            type="submit"
+            value="Submit"
+          />
+        </form>
+      </div>
+    </section>
+  </main>
+</div>
+`;
