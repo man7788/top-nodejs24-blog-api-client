@@ -58,12 +58,6 @@ describe('App component', async () => {
     });
 
     it('should render home page', async () => {
-      usePostList.mockReturnValue({
-        posts,
-        error: null,
-        loading: false,
-      });
-
       usePostDetail.mockReturnValue({
         post,
         error: null,
@@ -91,12 +85,6 @@ describe('App component', async () => {
     });
 
     it('should render posts(home) page', async () => {
-      usePostList.mockReturnValue({
-        posts,
-        error: null,
-        loading: false,
-      });
-
       usePostDetail.mockReturnValue({
         post,
         error: null,
@@ -168,12 +156,6 @@ describe('App component', async () => {
 
   describe('Footer', async () => {
     it('should render home page', async () => {
-      usePostList.mockReturnValue({
-        posts,
-        error: null,
-        loading: false,
-      });
-
       usePostDetail.mockReturnValue({
         post,
         error: null,
