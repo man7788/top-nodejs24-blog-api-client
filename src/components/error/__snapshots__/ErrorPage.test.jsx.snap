@@ -1,0 +1,19 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should render error page 1`] = `
+<div>
+  <div
+    class="_ErrorPage_02f39b"
+  >
+    <h1>
+      Oh no, this route doesn't exist!
+    </h1>
+    <a
+      data-discover="true"
+      href="/"
+    >
+      You can go back to the home page by clicking here, though!
+    </a>
+  </div>
+</div>
+`;
