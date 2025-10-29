@@ -15,7 +15,7 @@ const Footer = () => {
           Contact
         </Link>
       </nav>
-      <div className={styles.copyright}>© 2025 All rights reserved </div>
+      <div className={styles.copyright}>© 2025 All rights reserved</div>
     </footer>
   );
 };
