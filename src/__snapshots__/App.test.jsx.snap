@@ -124,7 +124,7 @@ exports[`App component > Footer > should render home page 1`] = `
       <div
         class="_copyright_91da1a"
       >
-        © 2025 All rights reserved 
+        © 2025 All rights reserved
       </div>
     </footer>
   </div>
@@ -255,7 +255,7 @@ exports[`App component > Header > should render home page 1`] = `
       <div
         class="_copyright_91da1a"
       >
-        © 2025 All rights reserved 
+        © 2025 All rights reserved
       </div>
     </footer>
   </div>
@@ -386,7 +386,7 @@ exports[`App component > Header > should render posts(home) page 1`] = `
       <div
         class="_copyright_91da1a"
       >
-        © 2025 All rights reserved 
+        © 2025 All rights reserved
       </div>
     </footer>
   </div>
@@ -517,7 +517,7 @@ exports[`App component > Layout > should render the layout of App 1`] = `
       <div
         class="_copyright_91da1a"
       >
-        © 2025 All rights reserved 
+        © 2025 All rights reserved
       </div>
     </footer>
   </div>
