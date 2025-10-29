@@ -1,16 +1,16 @@
 import styles from './Comment.module.css';
 import dateFormatter from '../../../utils/dateFormatter';
 
-const Comment = ({ name, content, created }) => {
+const Comment = ({ id, name, content, created }) => {
   const formattedDate = dateFormatter(created);
 
   return (
-    <div className={styles.Comment}>
+    <article className={styles.Comment} key={id}>
       <h5 className={styles.author}>
         {name} • <span className={styles.createdAt}>{formattedDate}</span>
       </h5>
       <p className={styles.content}>{content}</p>
-    </div>
+    </article>
   );
 };
 
