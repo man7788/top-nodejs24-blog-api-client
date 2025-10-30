@@ -1,7 +1,7 @@
 import styles from './Comment.module.css';
 import dateFormatter from '../../../utils/dateFormatter';
 import useComments from '../../../hooks/useComments';
-import CommentForm from '../form/CommentForm';
+import CommentForm from './form/CommentForm';
 
 const Comment = ({ postId }) => {
   const { comments, loading, error, update, setUpdate } = useComments();
