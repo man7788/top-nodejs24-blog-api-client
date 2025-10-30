@@ -2,20 +2,44 @@ import styles from './CommentForm.module.css';
 import { useState } from 'react';
 import createComment from '../../../api/postComment';
 
-const CommentForm = ({ id, update, setUpdate }) => {
+const CommentForm = ({ postId, update, setUpdate }) => {
   const [loading, setLoading] = useState(null);
   const [error, setError] = useState(null);
   const [formError, setFormError] = useState(null);
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [content, setContent] = useState('');
+  const [form, setForm] = useState({ name: '', email: '', content: '' });
+
+  const handleNameChange = (e) => {
+    setForm({
+      ...form,
+      name: e.target.value,
+    });
+  };
+
+  const handleEmailChange = (e) => {
+    setForm({
+      ...form,
+      email: e.target.value,
+    });
+  };
+
+  const handleContentChange = (e) => {
+    setForm({
+      ...form,
+      content: e.target.value,
+    });
+  };
 
   const submitForm = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    const { error } = await createComment(id, name, email, content);
+    const { error } = await createComment(
+      postId,
+      form.name,
+      form.email,
+      form.content,
+    );
 
     if (error) {
       if (error.details) {
@@ -39,6 +63,7 @@ const CommentForm = ({ id, update, setUpdate }) => {
       }
     }
 
+    setForm({ name: '', email: '', content: '' });
     setLoading(false);
     setUpdate(!update);
   };
@@ -47,7 +72,7 @@ const CommentForm = ({ id, update, setUpdate }) => {
     return (
       <div>
         <h4 className={styles.title}>Leave a comment</h4>
-        <h4>Loading...</h4>
+        <h5>Loading...</h5>
       </div>
     );
 
@@ -55,13 +80,13 @@ const CommentForm = ({ id, update, setUpdate }) => {
     return (
       <div>
         <h4 className={styles.title}>Leave a comment</h4>
-        <h4>A network error was encountered</h4>
+        <h5>A network error was encountered</h5>
       </div>
     );
   }
 
   return (
-    <div className={styles.CommentForm}>
+    <section className={styles.CommentForm}>
       <h4 className={styles.title}>Leave a comment</h4>
       <form method="post" onSubmit={submitForm} className={styles.form}>
         <div className={styles.inputGroup}>
@@ -70,8 +95,8 @@ const CommentForm = ({ id, update, setUpdate }) => {
             type="text"
             id="name"
             name="name"
-            value={name}
-            onChange={(event) => setName(event.target.value)}
+            value={form.name}
+            onChange={handleNameChange}
             className={styles.input}
           />
           <div className={styles.errMessage}>
@@ -84,8 +109,8 @@ const CommentForm = ({ id, update, setUpdate }) => {
             type="email"
             id="email"
             name="email"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
+            value={form.email}
+            onChange={handleEmailChange}
             className={styles.input}
           />
           <div className={styles.errMessage}>
@@ -96,8 +121,8 @@ const CommentForm = ({ id, update, setUpdate }) => {
           <textarea
             name="content"
             placeholder="Your comment here"
-            value={content}
-            onChange={(event) => setContent(event.target.value)}
+            value={form.content}
+            onChange={handleContentChange}
             className={styles.textarea}
           ></textarea>
           <div className={styles.errMessage}>
@@ -106,7 +131,7 @@ const CommentForm = ({ id, update, setUpdate }) => {
         </div>
         <input type="submit" value="Submit" className={styles.submit} />
       </form>
-    </div>
+    </section>
   );
 };
 
