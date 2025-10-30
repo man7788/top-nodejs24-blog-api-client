@@ -1,6 +1,6 @@
 import styles from './CommentForm.module.css';
 import { useState } from 'react';
-import createComment from '../../../api/postComment';
+import createComment from '../../../../api/postComment';
 
 const CommentForm = ({ postId, update, setUpdate }) => {
   const [loading, setLoading] = useState(null);
