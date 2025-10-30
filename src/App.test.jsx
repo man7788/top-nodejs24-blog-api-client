@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { createMemoryRouter, RouterProvider } from 'react-router';
+import { createMemoryRouter, RouterProvider, useParams } from 'react-router';
 import userEvent from '@testing-library/user-event';
 
 import routes from './routes/routes';
@@ -8,6 +8,21 @@ import usePostDetail from './hooks/usePostDetail';
 
 vi.mock('./hooks/usePostList');
 vi.mock('./hooks/usePostDetail');
+vi.mock('./hooks/useComments', () => ({
+  default: vi.fn().mockReturnValue({
+    comments: [
+      {
+        id: 1,
+        name: 'john doe',
+        content: 'Comment 1',
+        createdAt: new Date().toISOString(),
+      },
+    ],
+    error: null,
+    loading: false,
+  }),
+}));
+
 vi.mock('react-router', async (importOriginal) => {
   const actual = await importOriginal();
   return {
@@ -51,6 +66,8 @@ describe('App component', async () => {
   });
 
   describe('Header', async () => {
+    useParams.mockReturnValue({ id: 1 });
+
     usePostList.mockReturnValue({
       posts,
       error: null,
