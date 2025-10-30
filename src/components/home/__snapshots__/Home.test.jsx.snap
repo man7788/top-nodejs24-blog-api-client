@@ -25,7 +25,7 @@ exports[`Home component > should render a list of posts 1`] = `
         <div
           class="_date_eab267"
         >
-          29 Oct 2025
+          30 Oct 2025
         </div>
       </li>
       <li
@@ -45,7 +45,7 @@ exports[`Home component > should render a list of posts 1`] = `
         <div
           class="_date_eab267"
         >
-          29 Oct 2025
+          30 Oct 2025
         </div>
       </li>
     </ul>
