@@ -38,7 +38,7 @@ const useComments = () => {
     fetchData();
   }, [update]);
 
-  return { comments: [], error, loading, update, setUpdate };
+  return { comments, error, loading, update, setUpdate };
 };
 
 export default useComments;
