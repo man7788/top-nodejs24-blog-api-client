@@ -13,23 +13,133 @@ exports[`Post component > should render post page 1`] = `
         <div
           class="_createdAt_67f347"
         >
-          30 Oct 2025
+          1 Jan 2025
         </div>
       </h2>
       <p
         class="_content_67f347"
-      />
+      >
+        Post content 1
+      </p>
     </article>
-    <h4
-      class="_comments_66cb20"
-    >
-      Comments
-    </h4>
-    <h5
-      class="_loading_66cb20"
-    >
-      Loading...
-    </h5>
+    <section>
+      <h4
+        class="_comments_66cb20"
+      >
+        Comments
+      </h4>
+      <article
+        class="_Comment_66cb20"
+      >
+        <h5
+          class="_author_66cb20"
+        >
+          john doe
+           •
+           
+          <span
+            class="_createdAt_66cb20"
+          >
+            1 Jan 2025
+          </span>
+        </h5>
+        <p
+          class="_content_66cb20"
+        >
+          Comment 1
+        </p>
+      </article>
+      <article
+        class="_Comment_66cb20"
+      >
+        <h5
+          class="_author_66cb20"
+        >
+          jane doe
+           •
+           
+          <span
+            class="_createdAt_66cb20"
+          >
+            1 Jan 2025
+          </span>
+        </h5>
+        <p
+          class="_content_66cb20"
+        >
+          Comment 2
+        </p>
+      </article>
+      <section
+        class="_CommentForm_b7c847"
+      >
+        <h4
+          class="_title_b7c847"
+        >
+          Leave a comment
+        </h4>
+        <form
+          class="_form_b7c847"
+          method="post"
+        >
+          <div
+            class="_inputGroup_b7c847"
+          >
+            <label
+              for="name"
+            >
+              Name:
+            </label>
+            <input
+              class="_input_b7c847"
+              id="name"
+              name="name"
+              type="text"
+              value=""
+            />
+            <div
+              class="_errMessage_b7c847"
+            />
+          </div>
+          <div
+            class="_inputGroup_b7c847"
+          >
+            <label
+              for="email"
+            >
+              Email:
+            </label>
+            <input
+              class="_input_b7c847"
+              id="email"
+              name="email"
+              type="email"
+              value=""
+            />
+            <div
+              class="_errMessage_b7c847"
+            />
+          </div>
+          <div
+            class="_textareaGroup_b7c847"
+          >
+            <textarea
+              class="_textarea_b7c847"
+              name="content"
+              placeholder="Your comment here"
+            />
+            <div
+              class="_errMessage_b7c847"
+            />
+          </div>
+          <input
+            class="_submit_b7c847"
+            type="submit"
+            value="Submit"
+          />
+        </form>
+      </section>
+    </section>
   </main>
 </div>
 `;

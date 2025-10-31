@@ -2,8 +2,10 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 import Post from './Post';
 import usePostDetail from '../../hooks/usePostDetail';
+import useComments from '../../hooks/useComments';
 
 vi.mock('../../hooks/usePostDetail');
+vi.mock('../../hooks/useComments');
 
 afterEach(() => {
   vi.clearAllMocks();
@@ -54,26 +56,32 @@ describe('Post component', async () => {
         id: 1,
         name: 'john doe',
         content: 'Comment 1',
-        created: new Date().toISOString(),
+        createdAt: '2025-01-01T00:00:00Z',
       },
       {
         id: 2,
         name: 'jane doe',
         content: 'Comment 2',
-        created: new Date().toISOString(),
+        createdAt: '2025-01-01T00:00:00Z',
       },
     ];
 
     const post = {
       id: 1,
       title: 'Post title 1',
-      contnet: 'Post content 1',
-      createdAt: new Date().toISOString(),
+      content: 'Post content 1',
+      createdAt: '2025-01-01T00:00:00Z',
       comments,
     };
 
     usePostDetail.mockReturnValue({
       post,
+      error: null,
+      loading: false,
+    });
+
+    useComments.mockReturnValue({
+      comments,
       error: null,
       loading: false,
     });
