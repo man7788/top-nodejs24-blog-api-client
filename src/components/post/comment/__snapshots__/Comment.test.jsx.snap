@@ -1,0 +1,208 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Comment component > should render comments 1`] = `
+<div>
+  <section>
+    <h4
+      class="_comments_66cb20"
+    >
+      Comments
+    </h4>
+    <article
+      class="_Comment_66cb20"
+    >
+      <h5
+        class="_author_66cb20"
+      >
+        foobar
+         •
+         
+        <span
+          class="_createdAt_66cb20"
+        >
+          1 Jan 2025
+        </span>
+      </h5>
+      <p
+        class="_content_66cb20"
+      >
+        Post comment 1
+      </p>
+    </article>
+    <article
+      class="_Comment_66cb20"
+    >
+      <h5
+        class="_author_66cb20"
+      >
+        foobar
+         •
+         
+        <span
+          class="_createdAt_66cb20"
+        >
+          1 Jan 2025
+        </span>
+      </h5>
+      <p
+        class="_content_66cb20"
+      >
+        Post comment 2
+      </p>
+    </article>
+    <section
+      class="_CommentForm_b7c847"
+    >
+      <h4
+        class="_title_b7c847"
+      >
+        Leave a comment
+      </h4>
+      <form
+        class="_form_b7c847"
+        method="post"
+      >
+        <div
+          class="_inputGroup_b7c847"
+        >
+          <label
+            for="name"
+          >
+            Name:
+          </label>
+          <input
+            class="_input_b7c847"
+            id="name"
+            name="name"
+            type="text"
+            value=""
+          />
+          <div
+            class="_errMessage_b7c847"
+          />
+        </div>
+        <div
+          class="_inputGroup_b7c847"
+        >
+          <label
+            for="email"
+          >
+            Email:
+          </label>
+          <input
+            class="_input_b7c847"
+            id="email"
+            name="email"
+            type="email"
+            value=""
+          />
+          <div
+            class="_errMessage_b7c847"
+          />
+        </div>
+        <div
+          class="_textareaGroup_b7c847"
+        >
+          <textarea
+            class="_textarea_b7c847"
+            name="content"
+            placeholder="Your comment here"
+          />
+          <div
+            class="_errMessage_b7c847"
+          />
+        </div>
+        <input
+          class="_submit_b7c847"
+          type="submit"
+          value="Submit"
+        />
+      </form>
+    </section>
+  </section>
+</div>
+`;
+
+exports[`Comment component > should render no comments yet 1`] = `
+<div>
+  <section>
+    <h4
+      class="_comments_66cb20"
+    >
+      Comments
+    </h4>
+    <p>
+      No comments yet.
+    </p>
+    <section
+      class="_CommentForm_b7c847"
+    >
+      <h4
+        class="_title_b7c847"
+      >
+        Leave a comment
+      </h4>
+      <form
+        class="_form_b7c847"
+        method="post"
+      >
+        <div
+          class="_inputGroup_b7c847"
+        >
+          <label
+            for="name"
+          >
+            Name:
+          </label>
+          <input
+            class="_input_b7c847"
+            id="name"
+            name="name"
+            type="text"
+            value=""
+          />
+          <div
+            class="_errMessage_b7c847"
+          />
+        </div>
+        <div
+          class="_inputGroup_b7c847"
+        >
+          <label
+            for="email"
+          >
+            Email:
+          </label>
+          <input
+            class="_input_b7c847"
+            id="email"
+            name="email"
+            type="email"
+            value=""
+          />
+          <div
+            class="_errMessage_b7c847"
+          />
+        </div>
+        <div
+          class="_textareaGroup_b7c847"
+        >
+          <textarea
+            class="_textarea_b7c847"
+            name="content"
+            placeholder="Your comment here"
+          />
+          <div
+            class="_errMessage_b7c847"
+          />
+        </div>
+        <input
+          class="_submit_b7c847"
+          type="submit"
+          value="Submit"
+        />
+      </form>
+    </section>
+  </section>
+</div>
+`;
