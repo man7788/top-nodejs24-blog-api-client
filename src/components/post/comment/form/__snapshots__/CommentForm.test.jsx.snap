@@ -1,0 +1,75 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CommentForm component > should render comment form 1`] = `
+<div>
+  <section
+    class="_CommentForm_b7c847"
+  >
+    <h4
+      class="_title_b7c847"
+    >
+      Leave a comment
+    </h4>
+    <form
+      class="_form_b7c847"
+      method="post"
+    >
+      <div
+        class="_inputGroup_b7c847"
+      >
+        <label
+          for="name"
+        >
+          Name:
+        </label>
+        <input
+          class="_input_b7c847"
+          id="name"
+          name="name"
+          type="text"
+          value=""
+        />
+        <div
+          class="_errMessage_b7c847"
+        />
+      </div>
+      <div
+        class="_inputGroup_b7c847"
+      >
+        <label
+          for="email"
+        >
+          Email:
+        </label>
+        <input
+          class="_input_b7c847"
+          id="email"
+          name="email"
+          type="email"
+          value=""
+        />
+        <div
+          class="_errMessage_b7c847"
+        />
+      </div>
+      <div
+        class="_textareaGroup_b7c847"
+      >
+        <textarea
+          class="_textarea_b7c847"
+          name="content"
+          placeholder="Your comment here"
+        />
+        <div
+          class="_errMessage_b7c847"
+        />
+      </div>
+      <input
+        class="_submit_b7c847"
+        type="submit"
+        value="Submit"
+      />
+    </form>
+  </section>
+</div>
+`;
