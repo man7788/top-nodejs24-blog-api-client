@@ -68,7 +68,7 @@ exports[`App component > Footer > should render home page 1`] = `
           <div
             class="_date_eab267"
           >
-            30 Oct 2025
+            1 Jan 2025
           </div>
         </li>
         <li
@@ -88,7 +88,7 @@ exports[`App component > Footer > should render home page 1`] = `
           <div
             class="_date_eab267"
           >
-            30 Oct 2025
+            1 Jan 2025
           </div>
         </li>
       </ul>
@@ -199,7 +199,7 @@ exports[`App component > Header > should render home page 1`] = `
           <div
             class="_date_eab267"
           >
-            30 Oct 2025
+            1 Jan 2025
           </div>
         </li>
         <li
@@ -219,7 +219,7 @@ exports[`App component > Header > should render home page 1`] = `
           <div
             class="_date_eab267"
           >
-            30 Oct 2025
+            1 Jan 2025
           </div>
         </li>
       </ul>
@@ -330,7 +330,7 @@ exports[`App component > Header > should render posts(home) page 1`] = `
           <div
             class="_date_eab267"
           >
-            30 Oct 2025
+            1 Jan 2025
           </div>
         </li>
         <li
@@ -350,7 +350,7 @@ exports[`App component > Header > should render posts(home) page 1`] = `
           <div
             class="_date_eab267"
           >
-            30 Oct 2025
+            1 Jan 2025
           </div>
         </li>
       </ul>
@@ -461,7 +461,7 @@ exports[`App component > Layout > should render the layout of App 1`] = `
           <div
             class="_date_eab267"
           >
-            30 Oct 2025
+            1 Jan 2025
           </div>
         </li>
         <li
@@ -481,7 +481,7 @@ exports[`App component > Layout > should render the layout of App 1`] = `
           <div
             class="_date_eab267"
           >
-            30 Oct 2025
+            1 Jan 2025
           </div>
         </li>
       </ul>

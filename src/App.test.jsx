@@ -15,7 +15,7 @@ vi.mock('./hooks/useComments', () => ({
         id: 1,
         name: 'john doe',
         content: 'Comment 1',
-        createdAt: new Date().toISOString(),
+        createdAt: '2025-01-01T00:00:00Z',
       },
     ],
     error: null,
@@ -40,13 +40,13 @@ describe('App component', async () => {
     id: 1,
     title: 'Post title 1',
     contnet: 'Post content 1',
-    createdAt: new Date().toISOString(),
+    createdAt: '2025-01-01T00:00:00Z',
     comments: [],
   };
 
   const posts = [
-    { id: 1, title: 'Post title 1', createdAt: new Date().toISOString() },
-    { id: 2, title: 'Post title 2', createdAt: new Date().toISOString() },
+    { id: 1, title: 'Post title 1', createdAt: '2025-01-01T00:00:00Z' },
+    { id: 2, title: 'Post title 2', createdAt: '2025-01-01T00:00:00Z' },
   ];
 
   describe('Layout', async () => {
