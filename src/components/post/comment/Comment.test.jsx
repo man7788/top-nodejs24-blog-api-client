@@ -1,11 +1,13 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 import userEvent from '@testing-library/user-event';
 import Comment from './Comment';
-import useComments from '../../../hooks/useComments';
+import * as useComments from '../../../hooks/useComments';
 import postComment from '../../../api/postComment';
 
-vi.mock('../../../hooks/useComments');
+const useCommentsSpy = vi.spyOn(useComments, 'default');
+const fetchSpy = vi.spyOn(global, 'fetch');
+
 vi.mock('../../../api/postComment');
 
 afterEach(() => {
@@ -14,7 +16,7 @@ afterEach(() => {
 
 describe('Comment component', async () => {
   it('should render loading', async () => {
-    useComments.mockReturnValue({
+    useCommentsSpy.mockReturnValue({
       comments: null,
       error: null,
       loading: true,
@@ -33,7 +35,7 @@ describe('Comment component', async () => {
   });
 
   it('should render error', async () => {
-    useComments.mockReturnValue({
+    useCommentsSpy.mockReturnValue({
       comments: null,
       error: true,
       loading: false,
@@ -52,7 +54,7 @@ describe('Comment component', async () => {
   });
 
   it('should render no comments yet', async () => {
-    useComments.mockReturnValue({
+    useCommentsSpy.mockReturnValue({
       comment: [],
       error: null,
       loading: false,
@@ -87,7 +89,7 @@ describe('Comment component', async () => {
       },
     ];
 
-    useComments.mockReturnValue({
+    useCommentsSpy.mockReturnValue({
       comments,
       error: null,
       loading: false,
@@ -105,7 +107,7 @@ describe('Comment component', async () => {
   it('should update comments after form submission', async () => {
     const user = userEvent.setup();
 
-    const comments = [
+    const commentsLengthOne = [
       {
         id: 1,
         name: 'foobar',
@@ -116,15 +118,36 @@ describe('Comment component', async () => {
       },
     ];
 
-    const setUpdate = vi.fn();
+    const commentsLengthTwo = [
+      {
+        id: 1,
+        name: 'foobar',
+        email: 'foo@bar.com',
+        content: 'Post comment 1',
+        createdAt: '2025-01-01T00:00:00Z',
+        postId: 1,
+      },
+      {
+        id: 2,
+        name: 'foobar',
+        email: 'foo@bar.com',
+        content: 'Post comment 2',
+        createdAt: '2025-01-01T00:00:00Z',
+        postId: 1,
+      },
+    ];
 
-    useComments.mockReturnValue({
-      comments,
-      error: null,
-      loading: false,
-      update: false,
-      setUpdate,
-    });
+    useCommentsSpy.mockRestore();
+
+    fetchSpy
+      .mockResolvedValueOnce({
+        json: () => Promise.resolve({ data: { comments: commentsLengthOne } }),
+        status: 200,
+      })
+      .mockResolvedValueOnce({
+        json: () => Promise.resolve({ data: { comments: commentsLengthTwo } }),
+        status: 200,
+      });
 
     postComment.mockReturnValue({ error: null });
 
@@ -134,22 +157,28 @@ describe('Comment component', async () => {
       </MemoryRouter>,
     );
 
-    const inputs = screen.getAllByRole('textbox');
-    const submit = screen.getByRole('button');
+    const initialComments = await screen.findAllByRole('article');
+
+    expect(initialComments).toHaveLength(1);
+
+    const inputs = await screen.findAllByRole('textbox');
+    const submit = await screen.findByRole('button');
 
     await user.type(inputs[0], 'foobar');
     await user.type(inputs[1], 'foo@bar.com');
     await user.type(inputs[2], 'Post comment 2');
     await user.click(submit);
 
-    // setUpdate() should call { update } from useComment() hook
-    expect(setUpdate).toHaveBeenCalledWith(true); // setUpdate(!false)
-    // postId props from <Comment /> should pass to form submit payload
     expect(postComment).toHaveBeenCalledWith(
       1,
       'foobar',
       'foo@bar.com',
       'Post comment 2',
     );
+
+    await waitFor(() => {
+      const updatedComments = screen.getAllByRole('article');
+      expect(updatedComments).toHaveLength(2);
+    });
   });
 });
