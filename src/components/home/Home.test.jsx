@@ -50,8 +50,8 @@ describe('Home component', async () => {
 
   it('should render a list of posts', async () => {
     const posts = [
-      { id: 1, title: 'Post title 1', createdAt: new Date().toISOString() },
-      { id: 2, title: 'Post title 2', createdAt: new Date().toISOString() },
+      { id: 1, title: 'Post title 1', createdAt: '2025-01-01T00:00:00Z' },
+      { id: 2, title: 'Post title 2', createdAt: '2025-01-01T00:00:00Z' },
     ];
 
     usePostList.mockReturnValue({
